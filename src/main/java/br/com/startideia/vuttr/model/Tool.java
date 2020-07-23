@@ -43,7 +43,7 @@ public class Tool extends RepresentationModel<Tool> implements Serializable {
     private String description;
 
     @NotEmpty(message = "Tool tag list cannot be empty.")
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "tool_tag",
             joinColumns = {@JoinColumn(name = "tool_id")},
             inverseJoinColumns = {@JoinColumn(name = "tag_id")})
